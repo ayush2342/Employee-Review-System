@@ -1,0 +1,21 @@
+<header>
+    <div class="header-main-div">
+        <div>
+            <p><i class="fa-sharp fa-solid fa-people-arrows"></i> Employee Review System</p>
+        </div>
+        <div>
+            <ul>
+                <% if(locals.user){%>
+                    <li>Hello <%=user.name%>
+                    </li>
+                    <li><a href="/users/Signout">Sign Out</a></li>
+
+                    <% }else{%>
+                        <li><a href="/users/Signin">Sign In</a></li>
+                        <li><a href="/users/Signup">Sign UP</a></li>
+                        <%}%>
+            </ul>
+        </div>
+    </div>
+
+</header>

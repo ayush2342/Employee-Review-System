@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/css/signIn.css">
+<div class="main-div-signin">
+    <h1>Sign In</h1>
+    <hr>
+    <form action="/users/create-session" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Sign In</button>
+        <p>Don't have an Account <a href="/users/signup"> Sign Up</a></p>
+    </form>
+
+</div>
