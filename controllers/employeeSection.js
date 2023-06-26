@@ -50,7 +50,20 @@ module.exports.delete=async function(req,res)
         user.deleteOne();
 
         await AssignedReview.deleteMany({fromUser:req.params.id});
-        await MyReview.deleteMany({toUser:req.params.id})
+
+        let MyRiviewIDS = await MyReview.find({fromUser:req.params.id})
+
+
+        for(let review of MyRiviewIDS)
+        {
+            let userid= review.toUser
+            await User.findByIdAndUpdate(userid, { $pull: { myReviews: review.id } });
+            await review.deleteOne();
+
+        }
+
+        
+        // await MyReview.deleteMany({toUser:req.params.id})
 
         res.redirect('back')
         
