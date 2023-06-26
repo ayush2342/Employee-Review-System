@@ -6,6 +6,12 @@
         <div>
             <ul>
                 <% if(locals.user){%>
+                    <%if(locals.user.permission=='admin'){%>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/review/assignWork">Assign Work</a></li>
+                    <li><a href="/employee/home">Employee Section</a></li>
+                    <li><a href="/users/Signup">Register</a></li>
+                    <%}%>
                     <li>Hello <%=user.name%>
                     </li>
                     <li><a href="/users/Signout">Sign Out</a></li>

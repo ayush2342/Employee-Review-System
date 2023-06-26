@@ -38,7 +38,7 @@ app.set('views', './views');
 //MongoStore is used to store the session cookie in the DB
 app.use(session(
     {
-        name: 'social_Code',
+        name: 'employee_review',
         //ToDO Change the secret before deployment
         secret:'test',
         saveUninitialized: false,

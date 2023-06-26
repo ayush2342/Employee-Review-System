@@ -14,7 +14,10 @@
         <input type="hidden" name="permission" value="employee">
         <p>By Clicking Join Now, You Agree to the Terms and Conditions,UserPolicy and User Agreements</p>
         <button type="submit">Join Now</button>
-        <p>Already have an Account <a href="/users/signin"> Sign In</a></p>
+        <% if(!locals.user){%>
+            <p>Already have an Account <a href="/users/signin"> Sign In</a></p>
+            <%}%>
+        
     </form>
 
 </div>

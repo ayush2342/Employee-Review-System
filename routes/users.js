@@ -7,7 +7,6 @@ const userProfile = require('../controllers/user');
 router.get('/Signin', passport.restrictAccess, userProfile.Signin);
 router.get('/Signup', passport.restrictAccess, userProfile.SignUp);
 router.post('/create', userProfile.create);
-// router.post('/update/:id', passport.checkAuthentication, userProfile.update)
 
 
 //Use passport as a middleware to Authenticate

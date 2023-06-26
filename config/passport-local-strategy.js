@@ -65,12 +65,25 @@ passport.setAuthenticatedUser = function (req, res, next) {
 
 passport.restrictAccess = function (req, res, next) {
 
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated()&&req.user.permission!='admin') {
 
         return res.redirect('back');
     }
 
     next();
+}
+
+passport.restrictAccessPages = function (req, res, next) {
+
+    if (req.isAuthenticated()&&req.user.permission=='admin') {
+
+        next()
+    }
+    else{
+        return res.redirect('back');
+    }
+    
+    
 }
 
 

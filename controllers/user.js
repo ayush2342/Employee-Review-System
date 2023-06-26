@@ -28,7 +28,7 @@ module.exports.create = async function (req, res) {
       if (!user) {
          await User.create(req.body);
          req.flash('success', 'User Created succesfully');
-         return res.redirect('/users/Signin');
+         return res.redirect('back');
       }
       else {
          req.flash('error', 'User Already exits,Try signing in');
@@ -46,19 +46,16 @@ module.exports.create = async function (req, res) {
 
 //Sign in and create the session for the user
 module.exports.createSession = function (req, res) {
-   req.flash('success', 'Logged in Successfully');
    return res.redirect('/');
 }
 
 module.exports.destroySession = function (req, res) {
    req.logout(function (error) {
       if (error) {
-         req.flash('error', error);
          console.log('Error while signing out');
          return res.redirect('back');
       }
 
-      req.flash('success', 'You have been logged out');
       return res.redirect('/users/Signin');
    });
 
