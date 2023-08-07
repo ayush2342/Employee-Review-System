@@ -6,7 +6,7 @@
         <div>
             <ul>
                 <% if(locals.user){%>
-                    <%if(locals.user.permission=='employee'){%>
+                    <%if(locals.user.permission=='admin'){%>
                     <li><a href="/">Home</a></li>
                     <li><a href="/review/assignWork">Assign Work</a></li>
                     <li><a href="/employee/home">Employee Section</a></li>
